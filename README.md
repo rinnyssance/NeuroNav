@@ -106,7 +106,7 @@ Recommended next research step: evaluate the optional detector against a validat
 
 ## Deployment
 
-Vercel is connected to the GitHub repository. An initial deployment returned a 404 because Vercel was serving the repository root while the site entry point lives in `dist`; `vercel.json` now sets that output directory. Confirm a successful deployment and root response before treating the website as live.
+The prototype is live at [neuronav-five.vercel.app](https://neuronav-five.vercel.app/). Vercel serves `dist` as the site root via `vercel.json`. The production root and `saccades.js` returned HTTP 200 after the fix. Live camera accuracy and the full participant flow still need testing on a suitable device.
 
 ## Licensing
 
