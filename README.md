@@ -4,7 +4,11 @@ Spatial Adaptation Study 001 — an AI Accelerator research prototype.
 
 NeuroNav explores how a learned target location affects visual search after the target moves. The current implementation combines an eight-trial spacecraft-panel task with webcam gaze estimation. The current UI requires camera calibration and a quality check before entering the experiment.
 
-**Status:** functional prototype; webcam integration has not yet been validated with a live participant. This is not a diagnostic tool. An optional saccade-candidate detector accepts synchronized recordings from suitable eye trackers; it does not analyze webcam estimates.
+**Status:** functional prototype; webcam integration has not yet been validated with a live participant. A simulated cursor walkthrough is available without camera access. This is not a diagnostic tool. An optional saccade-candidate detector accepts synchronized recordings from suitable eye trackers; it does not analyze webcam estimates.
+
+![Animated walkthrough of the NeuroNav interface, simulated trial, changed target location, and results](dist/walkthrough.gif)
+
+The walkthrough uses cursor position as **simulated data**, not eye tracking. Choose **Try simulated walkthrough (no camera)** on the start screen. It skips calibration so the task and results can be explored without a webcam. Simulated exports are labeled separately and must not be used as participant gaze data.
 
 ## Study flow
 
@@ -84,9 +88,10 @@ Data is held in browser memory. The application does not upload or record camera
 - Gaze prediction dots and camera feedback are hidden during trials.
 - Hidden-page trial attempts restart and are flagged in the event log. Calibration/validation interruption or a changed window size requires a fresh session.
 - The camera stops at completion, explicit cancellation, or page exit.
+- WebGazer's MediaPipe face-mesh assets are loaded from a pinned CDN path. The previous relative path caused 404 responses and a `t is not a function` startup error on Vercel.
 - There is no drift correction, fixation detector, hardware synchronization, or benchmark against a reference tracker. Saccade candidates require an external synchronized recording.
 - Eight trials demonstrate the interaction and data flow. They do not establish learning effects, clinical validity, or statistical power.
-- The remotely loaded WebGazer script is currently unpinned. Pin an audited release and review its license and model dependencies before research deployment.
+- The remotely loaded WebGazer script is currently unpinned; its MediaPipe model asset path is pinned. Pin an audited WebGazer release and review its license and model dependencies before research deployment.
 - Full live-camera end-to-end verification is outstanding. Existing checks cover JavaScript syntax and the base eight-trial click flow using simulated inputs; they do not validate gaze accuracy.
 
 ## Open-source eye-movement options
@@ -106,10 +111,9 @@ Recommended next research step: evaluate the optional detector against a validat
 
 ## Deployment
 
-The prototype is live at [neuronav-five.vercel.app](https://neuronav-five.vercel.app/). Vercel serves `dist` as the site root via `vercel.json`. The production root and `saccades.js` returned HTTP 200 after the fix. Live camera accuracy and the full participant flow still need testing on a suitable device.
+Vercel serves `dist` as the site root via `vercel.json`. Check the current production URL in the Vercel project dashboard. Live camera accuracy and the full participant flow still need testing on a suitable device.
 
 ## Licensing
 
 No project-wide license has been selected yet. Dependencies retain their own licenses; WebGazer is GPLv3. Review those obligations before redistribution or choosing a license for the combined application.
-
 
