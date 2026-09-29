@@ -111,7 +111,7 @@ Recommended next research step: evaluate the optional detector against a validat
 
 ## Deployment
 
-Vercel serves `dist` as the site root via `vercel.json`. Check the current production URL in the Vercel project dashboard. Live camera accuracy and the full participant flow still need testing on a suitable device.
+Visit the live prototype at [neuronav-five.vercel.app](https://neuronav-five.vercel.app/). Vercel serves `dist` as the site root via `vercel.json`. Live camera accuracy and the full participant flow still need testing on a suitable device.
 
 ## Licensing
 
