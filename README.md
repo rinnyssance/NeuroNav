@@ -2,7 +2,7 @@
 
 Spatial Adaptation Study 001 — an AI Accelerator research prototype.
 
-NeuroNav explores how a learned target location affects visual search after the target moves. The current implementation combines an eight-trial spacecraft-panel task with optional-in-development webcam gaze estimation. The current UI requires camera calibration and a quality check before entering the experiment.
+NeuroNav explores how a learned target location affects visual search after the target moves. The current implementation combines an eight-trial spacecraft-panel task with webcam gaze estimation. The current UI requires camera calibration and a quality check before entering the experiment.
 
 **Status:** local functional prototype; webcam integration has not yet been validated with a live participant. This is not a diagnostic tool. No saccade or fixation detector is currently integrated.
 
@@ -82,7 +82,7 @@ Data is held in browser memory. The application does not upload or record camera
 
 ## Open-source eye-movement options
 
-Research checked on September 28, 2026:
+Research checked on September 29, 2026:
 
 | Project | What it provides | Relevance to NeuroNav |
 | --- | --- | --- |
@@ -102,4 +102,5 @@ A private Sites project was registered, but publication has not succeeded becaus
 ## Licensing
 
 No project-wide license has been selected yet. Dependencies retain their own licenses; WebGazer is GPLv3. Review those obligations before redistribution or choosing a license for the combined application.
+
 
